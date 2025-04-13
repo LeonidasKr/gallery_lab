@@ -1,0 +1,27 @@
+[
+  {
+    "src": "drawable/img1.jpg",
+    "alt": "Фото 1",
+    "caption": "Местное изображение 1"
+  },
+  {
+    "src": "drawable/img2.jpg",
+    "alt": "Фото 2",
+    "caption": "Местное изображение 2"
+  },
+  {
+    "src": "drawable/img3.jpeg",
+    "alt": "Фото 3",
+    "caption": "Местное изображение 3"
+  },
+   {
+    "src": "drawable/img4.jpg",
+    "alt": "Фото 4",
+    "caption": "Местное изображение 4"
+  },
+  {
+    "src": "drawable/img5.jpg",
+    "alt": "Фото 5",
+    "caption": "Местное изображение 5"
+  }
+]

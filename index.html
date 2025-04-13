@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Галерея изображений</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1>Интерактивная галерея</h1>
+    </header>
+
+    <main>
+        <button id="loadMoreBtn">Загрузить ещё</button>
+        <div id="loader" hidden>Загрузка...</div>
+
+        <section class="gallery" aria-label="Галерея изображений">
+            <ul class="image-list" id="imageList">
+                <!-- Изображения загружаются динамически -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Галерея</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

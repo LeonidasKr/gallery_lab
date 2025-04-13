@@ -1,0 +1,131 @@
+/* Базовая стилизация */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header,
+footer {
+    background-color: #222;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+}
+
+/* Галерея */
+.gallery {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+}
+
+.image-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.image-item {
+    flex: 0 0 auto;
+}
+
+figure {
+    margin: 0;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-эффекты */
+figure:hover {
+    transform: translateY(-5px);
+}
+
+figure img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+
+    header,
+    footer {
+        font-size: 0.9rem;
+    }
+
+    figure {
+        width: 150px;
+    }
+
+    figcaption {
+        font-size: 0.8rem;
+    }
+}
+#loadMoreBtn {
+    padding: 0.6rem 1.2rem;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+}
+
+#loadMoreBtn:hover {
+    background-color: #005fa3;
+}
+
+#loader {
+    margin: 1rem 0;
+    color: #555;
+    font-style: italic;
+}
+/* Стили для figure и изображений */
+.image-item figure {
+    margin: 0;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффекты наведения */
+.image-item:hover figure {
+    transform: translateY(-5px);
+}
+
+.image-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
