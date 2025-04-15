@@ -1,39 +1,50 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
-  const imageList = document.getElementById("imageList");
-  const loader = document.getElementById("loader");
+// Scroll to top button
+window.onscroll = function () {
+  scrollFunction();
+};
 
-  loadMoreBtn.addEventListener("click", () => {
-    loader.hidden = false;
-    fetch("data/images.json")
-      .then(response => response.json())
-      .then(images => {
-        images.forEach(image => {
-          const li = document.createElement("li");
-          li.className = "image-item";
+function scrollFunction() {
+  const btn = document.getElementById("topBtn");
+  if (document.body.scrollTop > 4 || document.documentElement.scrollTop > 4) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
 
-          const figure = document.createElement("figure");
-          const img = document.createElement("img");
-          const caption = document.createElement("figcaption");
+function goToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
-          img.src = image.src;
-          img.alt = image.alt;
-          img.loading = "lazy";
+// AJAX photo upload
+document.getElementById("uploadForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-          caption.textContent = image.caption;
+  const formData = new FormData(this);
 
-          figure.appendChild(img);
-          figure.appendChild(caption);
-          li.appendChild(figure);
-          imageList.appendChild(li);
-        });
-      })
-      .catch(error => {
-        console.error("Ошибка загрузки:", error);
-        alert("Не удалось загрузить изображения.");
-      })
-      .finally(() => {
-        loader.hidden = true;
-      });
-  });
+  fetch("php/upload.php", {
+    method: "POST",
+    body: formData
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        const section = document.getElementById(`${data.category}-section`);
+        const link = document.createElement("a");
+        link.href = data.imageUrl;
+
+        const img = document.createElement("img");
+        img.src = data.imageUrl;
+        img.alt = "Uploaded";
+
+        link.appendChild(img);
+        section.appendChild(link);
+      } else {
+        alert("Upload failed");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
 });
