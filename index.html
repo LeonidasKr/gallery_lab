@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive image gallery">
     <title>Gallery</title>
-    <link rel="icon" type="image/png" href="images/camera-icon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="icon" type="image/png" href="images/camera-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -15,7 +16,6 @@
         <header>
             <h1>Gallery</h1>
             <nav>
-                <a href="#" id="menu-icon"></a>
                 <ul>
                     <li><a href="#Frogs">Frogs</a></li>
                     <li><a href="#Dogs">Dogs</a></li>
@@ -25,65 +25,65 @@
         </header>
 
         <section>
-            <a name="Frogs"></a>
-            <h2>Frogs</h2>
+            <h2 id="Frogs">Frogs</h2>
             <div class="container" id="frogs-section">
-                <a href="drawable/img21.jpg"><img src="drawable/img21.jpg" alt="frog1" /></a>
-                <a href="drawable/img22.jpg"><img src="drawable/img22.jpg" alt="frog2" /></a>
-                <a href="drawable/img23.jpg"><img src="drawable/img23.jpg" alt="frog3" /></a>
-                <a href="drawable/img24.jpg"><img src="drawable/img24.jpg" alt="frog4" /></a>
-                <a href="drawable/img25.jpg"><img src="drawable/img25.jpg" alt="frog5" /></a>
+                <a href="drawable/img21.jpg"><img src="drawable/img21.jpg" alt="frog1"></a>
+                <a href="drawable/img22.jpg"><img src="drawable/img22.jpg" alt="frog2"></a>
+                <a href="drawable/img23.jpg"><img src="drawable/img23.jpg" alt="frog3"></a>
+                <a href="drawable/img24.jpg"><img src="drawable/img24.jpg" alt="frog4"></a>
+                <a href="drawable/img25.jpg"><img src="drawable/img25.jpg" alt="frog5"></a>
             </div>
         </section>
-        <!-- End of Nature Section -->
+
         <section>
-            <a name="Dogs"></a>
-            <h2>Dogs</h2>
+            <h2 id="Dogs">Dogs</h2>
             <div class="container" id="dogs-section">
-                <a href="drawable/img11.jpg"><img src="drawable/img11.jpg" alt="dog1" /></a>
-                <a href="drawable/img12.jpg"><img src="drawable/img12.jpg" alt="dog2" /></a>
-                <a href="drawable/img13.jpg"><img src="drawable/img13.jpg" alt="dog3" /></a>
-                <a href="drawable/img14.jpg"><img src="drawable/img14.jpg" alt="dog4" /></a>
-                <a href="drawable/img15.jpg"><img src="drawable/img15.jpg" alt="dog5" /></a>
+                <a href="drawable/img11.jpg"><img src="drawable/img11.jpg" alt="dog1"></a>
+                <a href="drawable/img12.jpg"><img src="drawable/img12.jpg" alt="dog2"></a>
+                <a href="drawable/img13.jpg"><img src="drawable/img13.jpg" alt="dog3"></a>
+                <a href="drawable/img14.jpg"><img src="drawable/img14.jpg" alt="dog4"></a>
+                <a href="drawable/img15.jpg"><img src="drawable/img15.jpg" alt="dog5"></a>
             </div>
         </section>
+
         <section>
-            <a name="Cats"></a>
-            <h2>Cats</h2>
+            <h2 id="Cats">Cats</h2>
             <div class="container" id="cats-section">
-                <a href="drawable/img1.jpg"><img src="drawable/img1.jpg" alt="Cat1" /></a>
-                <a href="drawable/img2.jpg"><img src="drawable/img2.jpg" alt="Cat2" /></a>
-                <a href="drawable/img3.jpg"><img src="drawable/img3.jpg" alt="Cat3" /></a>
-                <a href="drawable/img4.jpg"><img src="drawable/img4.jpg" alt="Cat4" /></a>
-                <a href="drawable/img5.jpg"><img src="drawable/img5.jpg" alt="Cat5" /></a>
+                <a href="drawable/img1.jpg"><img src="drawable/img1.jpg" alt="cat1"></a>
+                <a href="drawable/img2.jpg"><img src="drawable/img2.jpg" alt="cat2"></a>
+                <a href="drawable/img3.jpg"><img src="drawable/img3.jpg" alt="cat3"></a>
+                <a href="drawable/img4.jpg"><img src="drawable/img4.jpg" alt="cat4"></a>
+                <a href="drawable/img5.jpg"><img src="drawable/img5.jpg" alt="cat5"></a>
             </div>
         </section>
 
-        <!-- AJAX Upload Form -->
-        <form class="upload-form" id="uploadForm" enctype="multipart/form-data">
-            <input type="file" name="photo" required>
-            <select name="category">
-                <option value="cats">Cats</option>
-                <option value="dogs">Dogs</option>
-                <option value="frogs">Frogs</option>
-            </select>
-            <button type="submit">Upload</button>
-        </form>
+        <!-- Upload Form -->
+        <section>
+            <h2>Upload a Photo</h2>
+            <form id="uploadForm" class="upload-form" enctype="multipart/form-data" action="#">
+                <input type="file" name="photo" required>
+                <select name="category" required>
+                    <option value="cats">Cats</option>
+                    <option value="dogs">Dogs</option>
+                    <option value="frogs">Frogs</option>
+                </select>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
 
+        <!-- Modal -->
+        <div id="imageModal" class="modal">
+            <span class="closeBtn" id="closeModal">&times;</span>
+            <img class="modal-content" id="modalImg" alt="modal-view">
+        </div>
 
+        <!-- Scroll Button -->
+        <button onclick="goToTop()" id="topBtn" title="Go to top">Top of Page</button>
 
-        <button onclick="goToTop()" id="topBtn" title="Go to top of page">
-            Top of Page
-        </button>
         <footer class="footer">
-            <p>Copyright &copy; 2025, Gallery</p>
+            <p>&copy; 2025, Gallery</p>
         </footer>
     </div>
-<!-- Модальное окно -->
-<div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImg">
-</div>
 
     <script src="js/script.js"></script>
 </body>
