@@ -56,21 +56,21 @@ const closeBtn = document.querySelector(".close");
 
 // Показываем модалку при клике на изображение
 document.addEventListener("click", function (e) {
-    if (e.target.tagName === "IMG" && e.target.closest(".container")) {
-        e.preventDefault();
-        modal.style.display = "block";
-        modalImg.src = e.target.src;
-    }
+  if (e.target.tagName === "IMG" && e.target.closest(".container")) {
+    e.preventDefault();
+    modal.style.display = "block";
+    modalImg.src = e.target.src;
+  }
 });
 
 // Закрытие по нажатию на крестик
 closeBtn.addEventListener("click", function () {
-    modal.style.display = "none";
+  modal.style.display = "none";
 });
 
 // Закрытие по клику вне картинки
 modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 });
